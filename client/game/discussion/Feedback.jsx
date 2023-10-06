@@ -46,7 +46,7 @@ class feedback extends Component {
         <p>
           We will be using our trained algorithm to evaluate the creativity of
           slogans submitted by all participants. This will determine the 5 most
-          creative slogans that will recieve the bonus €10
+          creative slogans that will recieve the bonus $10
         </p>
 
         {condition !== "control" && (

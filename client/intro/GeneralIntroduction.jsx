@@ -19,7 +19,7 @@ export default class GeneralIntroduction extends Component {
   }
   render() {
     const { hasNext, onNext, player, pageDbIndex, game, min } = this.props
-
+    const { condition } = game.treatment
     return (
       <DevWrapper {...this.props}>
         <Centered>
@@ -44,19 +44,21 @@ export default class GeneralIntroduction extends Component {
                 .
               </li>
               <li>
-                A trained algorithm will evaluate each slogan. After which, we
-                will select{" "}
+                {condition !== "control" &&
+                  "A trained algorithm will evaluate each slogan."}{" "}
+                We will select{" "}
                 <strong>
-                  the 5 most creative slogans and reward an additional €10 for
+                  the 5 most creative slogans and reward an additional $10 for
                   each idea.
                 </strong>
               </li>
               <li>
                 Your group will have 10 minutes in total to discuss and choose
                 your final slogans. At the 5-minute point, you have an
-                opportunity to review your initial ideas (and we will use the
-                same algorithm to provide you with preliminary feedback on the
-                slogans you already have).
+                opportunity to review your initial ideas{" "}
+                {condition !== "control" &&
+                  "(and we will use the same algorithm to provide you with preliminary feedback on the slogans you already have)"}
+                .
               </li>
             </ul>
           </div>

@@ -9,6 +9,7 @@ import InformationSharing from "../pages/InformationSharing"
 import IdeasReasoning from "../pages/IdeasReasoning"
 import Demographics from "../pages/Demographics"
 import ProcessClarity from "../pages/ProcessClarity"
+import GoalClarity from "../pages/GoalClarity"
 
 // Based on the currentPage number (that the player can change with navigating buttons),
 // show that page and passed down all the props.
@@ -21,18 +22,20 @@ export default class PostPages extends Component {
     if (currentPage === 1) {
       return <ManiupulationCheck {...this.props} />
     } else if (currentPage === 2) {
-      return <GroupEfficacy {...this.props} />
+      return <GoalClarity {...this.props} />
     } else if (currentPage === 3) {
-      return <PsychSafety {...this.props} />
+      return <ProcessClarity {...this.props} />
     } else if (currentPage === 4) {
-      return <TaskConflict {...this.props} />
+      return <GroupEfficacy {...this.props} />
     } else if (currentPage === 5) {
       return <InformationSharing {...this.props} />
     } else if (currentPage === 6) {
-      return <ProcessClarity {...this.props} />
+      return <PsychSafety {...this.props} />
     } else if (currentPage === 7) {
-      return <IdeasReasoning {...this.props} />
+      return <TaskConflict {...this.props} />
     } else if (currentPage === 8) {
+      return <IdeasReasoning {...this.props} />
+    } else if (currentPage === 9) {
       return <Demographics {...this.props} />
     }
   }

@@ -16,7 +16,7 @@ export default class PostSurvey extends Component {
   // You would get it with player.get(pageDbIndex)
   state = {
     min: 1,
-    max: 8,
+    max: 9,
     pageDbIndex: "exitPage",
   }
 
