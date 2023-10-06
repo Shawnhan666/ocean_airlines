@@ -1,0 +1,109 @@
+/* --------------------------------------------------------------------------------
+-                                 Question Templates                              -
+---------------------------------------------------------------------------------*/
+
+/* ----------------------------------------
+-                   General               - 
+---------------------------------------- */
+
+.centered-template {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+/* ----------------------------------------
+-             MultiCheck Styling          - 
+---------------------------------------- */
+
+.check-holder {
+    width: 75%;
+
+    margin: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.check-option {
+    width: 200px;
+
+    padding: 15px;
+    margin: 5px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+.check {
+    /* Change size Checkboxes */
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    padding: 10px;
+}
+
+/* ----------------------------------------
+-             MultiSlider Styling         - 
+---------------------------------------- */
+
+.multi-slider-allholder {
+    width: 100%;
+}
+
+.multi-slider-elements {
+    margin: 10px;
+    padding: 5px 50px 5px 50px;
+
+    background-color: aliceblue;
+    border-radius: 10px;
+}
+
+/* Getting rid of the thumb if there is no response */
+.out-of-bounds-thumb span {
+    display: none;
+}
+
+/* ----------------------------------------
+-           Open Question Styling         - 
+---------------------------------------- */
+
+.openQ {
+    width: 75%;
+    height: 400px;
+
+    margin: 10px;
+}
+
+/* ----------------------------------------
+-               Matrice Styling           - 
+---------------------------------------- */
+
+.matrix {
+    display: flex;
+    justify-content: center;
+}
+
+.matrix table {
+    border-collapse: collapse;
+}
+
+.matrix td, th {
+    padding: 15px;
+}
+
+.matrix .matrix-input, th {
+    text-align: center;
+}
+
+.matrix tr:hover {
+    background-color: #eaf0f5;
+}
+
+.matrix input[type='radio'] { transform: scale(2); }

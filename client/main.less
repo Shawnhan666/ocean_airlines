@@ -1,0 +1,550 @@
+/* --------
+- General -
+--------- */
+
+* {
+  font-family: Calibri, Arial, sans-serif;
+}
+
+// Make everything larger
+p,
+span,
+div {
+  font-size: 14pt;
+}
+
+h2 {
+  font-size: 20pt;
+}
+
+h3 {
+  font-size: 18pt;
+}
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justify-center-middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Image styling
+.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Make list items breathe a bit
+li {
+  margin: 5px 0;
+}
+
+/* --------
+- Buttons -
+--------- */
+
+// Buttons in this holder will look like this
+.button-holder {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+
+  button {
+    cursor: pointer;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #394b59;
+    background-color: #394b59;
+    color: white;
+  }
+
+  button:hover {
+    background-color: #5f839e;
+    color: white;
+  }
+
+  button:disabled {
+    background-color: #b1c3d0;
+    color: #394b59;
+    cursor: initial;
+  }
+}
+
+// Buttons in this holder will look like this
+.save-button-holder {
+  display: flex;
+  margin-top: 2rem;
+
+  button {
+    cursor: pointer;
+    position: relative;
+    padding: 0.8rem 1.2rem;
+    border-radius: 1rem;
+    border: 1px solid #394b59;
+    background-color: #394b59;
+    color: white;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  // button {
+  //   position: relative;
+  //   background-color: #04aa6d;
+  //   border: none;
+  //   font-size: 28px;
+  //   color: #ffffff;
+  //   padding: 20px;
+  //   width: 200px;
+  //   text-align: center;
+  //   -webkit-transition-duration: 0.4s; /* Safari */
+  //   transition-duration: 0.4s;
+  //   text-decoration: none;
+  //   overflow: hidden;
+  //   cursor: pointer;
+  // }
+
+  button:hover {
+    background-color: #5f839e;
+    color: white;
+  }
+
+  button:disabled {
+    background-color: #b1c3d0;
+    color: #394b59;
+    cursor: initial;
+  }
+  button:after {
+    content: "";
+    background: #8dc1e9;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+}
+
+/* -----------
+- Radio List -
+------------ */
+
+// Make radio lists bigger and nicer
+.radio-list {
+  margin: 5px 0 5px 10px;
+
+  span {
+    margin: 0 10px;
+  }
+
+  input[type="radio"] {
+    transform: scale(1.5);
+  }
+}
+
+/* ------
+- Timer -
+------- */
+
+.seconds {
+  // Helvetica has tabular numbers (fixed width), which looks better
+  // for a timer, doesn't jump all over the place.
+  font-family: Helvetica, Arial, sans-serif;
+  color: green;
+  margin: 0;
+}
+&.lessThan10 {
+  .seconds {
+    color: orange;
+  }
+}
+&.lessThan5 {
+  .seconds {
+    color: red;
+  }
+}
+
+/* -------
+- Avatar -
+-------- */
+
+.avatar-small {
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+}
+
+.avatar-medium {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+}
+
+// When it is in a paragraph of text
+.avatar-medium-textaligned {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  vertical-align: text-top;
+}
+
+/* --------------------------
+- Com and Comp page styling -
+--------------------------- */
+
+.com-n-comp {
+  p {
+    line-height: 1.45;
+    margin-bottom: 20px;
+  }
+}
+
+/* ------------
+- Clues Table -
+------------- */
+
+.tables-holder {
+  display: flex;
+}
+
+.table-of-clues {
+  border-collapse: collapse;
+  width: 33.33%;
+}
+
+.clues-header {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1.5px solid black;
+  background-color: #394b59;
+  color: white;
+
+  height: 75px;
+
+  font-size: 12pt;
+}
+
+.clues-row {
+  padding: 1.5rem;
+  border: 1px solid #394b59;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 200px;
+
+  * {
+    width: 100%;
+    font-size: 12pt;
+  }
+
+  p {
+    margin: 0 0 10px 0;
+  }
+}
+
+/* ----------------
+- Discussion Tabs -
+----------------- */
+
+.header-tab-holder {
+  display: flex;
+  border: 1.5px solid #394b59;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 15pt;
+
+  background-color: #394b59;
+  color: white;
+
+  padding: 0.8rem 1.2rem;
+  border: 1px solid white;
+  margin: 0;
+
+  width: 100%;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5f839e;
+  }
+}
+
+.tab-content {
+  border: 1.5px solid #394b59;
+  border-top: none;
+  padding: 10px;
+}
+
+/* -------------
+- Collab styling -
+-------------- */
+
+.select-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.select {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  align-items: center;
+
+  p {
+    margin-right: 5px;
+    margin-top: 4px;
+    text-align: center;
+  }
+}
+
+.collab-columns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.collab-holder {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1px;
+}
+
+.collab-n-chat {
+  height: 300px;
+  width: 600px;
+  display: flex;
+  padding-bottom: 1px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #04111a; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* -------------
+- Chat styling -
+-------------- */
+
+/* Chat styling */
+.messageSubmit {
+  width: 15%;
+  height: 50px;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0;
+  border: 1px solid #394b59;
+  background-color: #394b59;
+  color: white;
+  margin: 0px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5f839e;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: #b1c3d0;
+    color: #394b59;
+    cursor: initial;
+  }
+}
+
+/* Message styles */
+.sender-message {
+  background-color: #dbecf5;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cad2d8;
+}
+
+.receiver-message {
+  background-color: #f2f6fa;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cad2d8;
+}
+
+/* Header of Chat design */
+.header-notification {
+  display: flex;
+  align-items: center;
+
+  font-size: 12pt;
+  color: white;
+
+  background-color: red;
+  padding: 7px;
+
+  border-radius: 5px;
+}
+
+/* ------------------
+- Game design boxes -
+------------------- */
+
+/* Game tip*/
+.game-tip {
+  background-color: #dbecf5;
+  padding: 20px;
+  border-radius: 7px;
+  border: 1px solid #394b59;
+}
+
+/* Game instructions */
+.game-instructions {
+  //display: flex;
+  //justify-content: center;
+  // align-items: center;
+
+  background-color: #f5e3d4;
+  border: 1px solid #371c06;
+  color: #251406;
+
+  padding: 20px;
+  border-radius: 7px;
+}
+
+/* Game clues */
+.game-information {
+  padding: 20px;
+  border-radius: 7px;
+
+  border: 1px solid #310833;
+  background-color: #f6e7f7;
+}
+
+/*Game competition */
+.game-competition {
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  color: red;
+  background-color: white;
+  border: 1px solid red;
+
+  padding: 20px;
+  border-radius: 7px;
+}
+
+/* ----------------
+- Pledge design -
+----------------- */
+
+/*Game competition */
+
+.pledge-holder {
+  display: flex;
+  flex-direction: row;
+  & label {
+    line-height: 26px;
+    margin-bottom: 10px;
+  }
+  & input {
+    height: 26px;
+    margin-left: 10px;
+  }
+}
+
+/* ----------------
+- Whodunit design -
+----------------- */
+
+// Take out the arrows of number input
+.whodunit-input {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+
+  text-align: center;
+  width: 50px;
+
+  margin-right: 3px;
+}
+
+.whodunit-input::-webkit-outer-spin-button,
+.whodunit-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.whodunit-list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  width: 250px;
+}
+
+.whodunit-total {
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin: 0;
+}
+
+.whodunit-red {
+  background-color: lightcoral;
+}
+
+.whodunit-green {
+  background-color: lightgreen;
+}
+
+.whodunit-instructions-1 {
+  font-weight: 700;
+}
+
+.whodunit-instructions-2 {
+  color: rgb(150, 150, 150);
+}
+
+.whodunit-thankyou {
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  text-align: center;
+  background-color: lightgray;
+  width: 80%;
+}

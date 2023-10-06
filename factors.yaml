@@ -1,0 +1,84 @@
+treatments:
+  - name: AvB and Abroker
+    factorIds:
+      - ewf9BQhnfSpMkafDJ
+      - ABuPCWKGtKwNQnpQD
+      - 5DXrbAqd64MWpDF4X
+  - name: AvB and allCom
+    factorIds:
+      - ewf9BQhnfSpMkafDJ
+      - ABuPCWKGtKwNQnpQD
+      - 5TXhgjZ3SWFPAidyX
+  - name: nocomp and Abroker
+    factorIds:
+      - WhEBAJWL2Enqnoc52
+      - 5DXrbAqd64MWpDF4X
+      - ewf9BQhnfSpMkafDJ
+  - name: nocomp and allCom
+    factorIds:
+      - ewf9BQhnfSpMkafDJ
+      - WhEBAJWL2Enqnoc52
+      - 5TXhgjZ3SWFPAidyX
+  - name: Comm Close and Comp Brok
+    factorIds:
+      - ewf9BQhnfSpMkafDJ
+      - ji8HtEJiwebYudc7i
+      - 5TXhgjZ3SWFPAidyX
+  - name: Comm Close and Comp Close
+    factorIds:
+      - ewf9BQhnfSpMkafDJ
+      - qYPPf4tKuvSGunhmw
+      - 5TXhgjZ3SWFPAidyX
+factorTypes:
+  - _id: KzwN9sqPtkqPGY3mm
+    name: playerCount
+    description: The Number of players participating in the given game.
+    required: true
+    type: Integer
+    min: 1
+  - _id: QE3QuJLRvtcsRrA28
+    name: competition
+    description: JSON array of who is competing with whom.
+    required: true
+    type: String
+  - _id: CyAgaFRai5LgckWJE
+    name: communication
+    description: JSON array of the communication links
+    required: true
+    type: String
+factors:
+  - _id: ewf9BQhnfSpMkafDJ
+    name: three
+    value: 3
+    factorTypeId: KzwN9sqPtkqPGY3mm
+  - _id: WhEBAJWL2Enqnoc52
+    name: nocompetition
+    value: '[]'
+    factorTypeId: QE3QuJLRvtcsRrA28
+  - _id: ABuPCWKGtKwNQnpQD
+    name: AvB
+    value: '["AvB"]'
+    factorTypeId: QE3QuJLRvtcsRrA28
+  - _id: 5TXhgjZ3SWFPAidyX
+    name: all
+    value: '["AcB", "AcC", "BcC"]'
+    factorTypeId: CyAgaFRai5LgckWJE
+  - _id: 5DXrbAqd64MWpDF4X
+    name: Abroker
+    value: '["AcB", "AcC"]'
+    factorTypeId: CyAgaFRai5LgckWJE
+  - _id: qYPPf4tKuvSGunhmw
+    name: AvBvC
+    value: '["AvB", "AvC", "BvC"]'
+    factorTypeId: QE3QuJLRvtcsRrA28
+  - _id: ji8HtEJiwebYudc7i
+    name: AvB_and_AvC
+    value: '["AvB", "AvC"]'
+    factorTypeId: QE3QuJLRvtcsRrA28
+lobbyConfigs:
+  - name: myLobby
+    timeoutType: individual
+    timeoutInSeconds: 500
+    timeoutStrategy: fail
+    extendCount: 1
+    gameLobbyIds: []

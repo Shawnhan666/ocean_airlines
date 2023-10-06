@@ -1,0 +1,29 @@
+#firepad-container1 {
+  width: 600px;
+  height: 200px;
+  border: solid;
+  border-color: #000000;
+  background: #394b59;
+  color: #fff;
+  padding: 5px 5px;
+}
+
+#firepad-container2 {
+  width: 600px;
+  height: 200px;
+  border: solid;
+  border-color: #000000;
+  background: #394b59;
+  color: #fff;
+  padding: 5px 5px;
+}
+
+#firepad-container3 {
+  width: 600px;
+  height: 300px;
+  border: solid;
+  border-color: #000000;
+  background: #394b59;
+  color: #fff;
+  padding: 5px 5px;
+}
