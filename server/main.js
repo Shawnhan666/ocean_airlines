@@ -73,7 +73,7 @@ Empirica.gameInit((game) => {
   round.addStage({
     name: "interaction_1",
     displayName: "Collaborate",
-    durationInSeconds: isTest ? 135 : 300,
+    durationInSeconds: isTest ? 135 : 3000,
   })
 
   round.addStage({

@@ -117,9 +117,17 @@ class timer extends Component {
   }
 
   saveText = () => {
-    const { round, editorKey } = this.props
+    const { round, editorKey, number } = this.props
     let text = this.state["text"]
-    console.log(text)
+    let firepadContainer = document.querySelector(`#firepad-container${number}`)
+    let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText
+    console.log(eleText)
+    console.log(`text: ${text}`)
+    if (text === "") {
+      round.set(`collabText${editorKey}`, eleText)
+      return
+    }
+
     round.set(`collabText${editorKey}`, text)
   }
 
