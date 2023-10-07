@@ -57,7 +57,7 @@ export default class Consent extends React.Component {
               be asked to create if you consent to taking part in the study.
             </p>
             <p>
-              <strong>Compensation:</strong> There is a $12 reward for your
+              <strong>Compensation:</strong> There is a $4 reward for your
               participation as well as a $10 performance-based bonus.
             </p>
             <p>

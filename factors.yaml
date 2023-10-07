@@ -1,84 +1,48 @@
 treatments:
-  - name: AvB and Abroker
+  - name: control
     factorIds:
-      - ewf9BQhnfSpMkafDJ
-      - ABuPCWKGtKwNQnpQD
-      - 5DXrbAqd64MWpDF4X
-  - name: AvB and allCom
+      - EkyhdTQNfWrFgSd3c
+      - o3buGb6papgXEEQhs
+  - name: align
     factorIds:
-      - ewf9BQhnfSpMkafDJ
-      - ABuPCWKGtKwNQnpQD
-      - 5TXhgjZ3SWFPAidyX
-  - name: nocomp and Abroker
+      - EkyhdTQNfWrFgSd3c
+      - 2aTihJmbu5QzDWzFP
+  - name: misalign
     factorIds:
-      - WhEBAJWL2Enqnoc52
-      - 5DXrbAqd64MWpDF4X
-      - ewf9BQhnfSpMkafDJ
-  - name: nocomp and allCom
-    factorIds:
-      - ewf9BQhnfSpMkafDJ
-      - WhEBAJWL2Enqnoc52
-      - 5TXhgjZ3SWFPAidyX
-  - name: Comm Close and Comp Brok
-    factorIds:
-      - ewf9BQhnfSpMkafDJ
-      - ji8HtEJiwebYudc7i
-      - 5TXhgjZ3SWFPAidyX
-  - name: Comm Close and Comp Close
-    factorIds:
-      - ewf9BQhnfSpMkafDJ
-      - qYPPf4tKuvSGunhmw
-      - 5TXhgjZ3SWFPAidyX
+      - EkyhdTQNfWrFgSd3c
+      - cwanWNuXm4RcqKHnB
 factorTypes:
-  - _id: KzwN9sqPtkqPGY3mm
+  - _id: yiJbz2sv2vnTpwE8M
     name: playerCount
     description: The Number of players participating in the given game.
     required: true
     type: Integer
     min: 1
-  - _id: QE3QuJLRvtcsRrA28
-    name: competition
-    description: JSON array of who is competing with whom.
-    required: true
-    type: String
-  - _id: CyAgaFRai5LgckWJE
-    name: communication
-    description: JSON array of the communication links
+  - _id: fRcTQzutAevKiyGL8
+    name: condition
+    description: align misalign or control
     required: true
     type: String
 factors:
-  - _id: ewf9BQhnfSpMkafDJ
-    name: three
+  - _id: EkyhdTQNfWrFgSd3c
+    name: '3'
     value: 3
-    factorTypeId: KzwN9sqPtkqPGY3mm
-  - _id: WhEBAJWL2Enqnoc52
-    name: nocompetition
-    value: '[]'
-    factorTypeId: QE3QuJLRvtcsRrA28
-  - _id: ABuPCWKGtKwNQnpQD
-    name: AvB
-    value: '["AvB"]'
-    factorTypeId: QE3QuJLRvtcsRrA28
-  - _id: 5TXhgjZ3SWFPAidyX
-    name: all
-    value: '["AcB", "AcC", "BcC"]'
-    factorTypeId: CyAgaFRai5LgckWJE
-  - _id: 5DXrbAqd64MWpDF4X
-    name: Abroker
-    value: '["AcB", "AcC"]'
-    factorTypeId: CyAgaFRai5LgckWJE
-  - _id: qYPPf4tKuvSGunhmw
-    name: AvBvC
-    value: '["AvB", "AvC", "BvC"]'
-    factorTypeId: QE3QuJLRvtcsRrA28
-  - _id: ji8HtEJiwebYudc7i
-    name: AvB_and_AvC
-    value: '["AvB", "AvC"]'
-    factorTypeId: QE3QuJLRvtcsRrA28
+    factorTypeId: yiJbz2sv2vnTpwE8M
+  - _id: 2aTihJmbu5QzDWzFP
+    name: align
+    value: align
+    factorTypeId: fRcTQzutAevKiyGL8
+  - _id: cwanWNuXm4RcqKHnB
+    name: misalign
+    value: misalign
+    factorTypeId: fRcTQzutAevKiyGL8
+  - _id: o3buGb6papgXEEQhs
+    name: control
+    value: control
+    factorTypeId: fRcTQzutAevKiyGL8
 lobbyConfigs:
-  - name: myLobby
-    timeoutType: individual
-    timeoutInSeconds: 500
+  - name: fail5min
+    timeoutType: lobby
+    timeoutInSeconds: 300
     timeoutStrategy: fail
-    extendCount: 1
     gameLobbyIds: []

@@ -9,10 +9,10 @@ class feedback extends Component {
     const { game, round, player, remainingSeconds, stage } = this.props
 
     const idea1 =
-      round.get(`collabText${game._id}_interaction_1_1`) ||
+      round.get(`collabText_interaction_1_1`) ||
       "you did not submit an idea"
     const idea2 =
-      round.get(`collabText${game._id}_interaction_1_2`) ||
+      round.get(`collabText_interaction_1_2`) ||
       "you did not submit an idea"
 
     const { condition } = game.treatment

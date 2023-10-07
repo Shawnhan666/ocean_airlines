@@ -30,7 +30,7 @@ export default class ExitSurvey extends Component {
         </p>
         <p>
           Please allow us 5 business days to process your basic compensation
-          ($12).
+          ($4).
         </p>
         <p>
           Please allow us 4 business weeks to calculate all teams scores and
@@ -47,7 +47,7 @@ export default class ExitSurvey extends Component {
             className="main-btn"
             onClick={() => {
               window.location =
-                "https://app.prolific.com/submissions/complete?cc=C1JJA1KD"
+                "https://app.prolific.com/submissions/complete?cc=CUZPQZDO"
             }}
           >
             Submit and return to Prolific

@@ -194,7 +194,7 @@ export default class Demographics extends Component {
         <br />
 
         <p>
-          If you have any additional comments about the game, please write them
+          As this was a pilot study we appreciate your feedback on your experience! If you have any additional comments about the game, please write them
           here:
         </p>
         <textarea

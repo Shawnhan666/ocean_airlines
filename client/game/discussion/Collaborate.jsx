@@ -90,7 +90,7 @@ export default class Collaborate extends Component {
                 </p>
                 <p>
                   <em>
-                    {round.get(`collabText${game._id}_interaction_1_1`) ||
+                    {round.get(`collabText_interaction_1_1`) ||
                       "you did not submit an idea"}
                   </em>
                 </p>
@@ -116,7 +116,7 @@ export default class Collaborate extends Component {
                 </p>
                 <p>
                   <em>
-                    {round.get(`collabText${game._id}_interaction_1_2`) ||
+                    {round.get(`collabText_interaction_1_2`) ||
                       "you did not submit an idea"}
                   </em>
                 </p>
@@ -130,7 +130,7 @@ export default class Collaborate extends Component {
             </p>
             <div className="collab-n-chat">
               <CollabEditor
-                editorKey={`${game._id}_${stage.name}_2`}
+                editorKey={`${stage.name}_2`}
                 number={2}
                 {...this.props}
               />

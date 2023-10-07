@@ -27,7 +27,7 @@ import Thanks from "./exit/debrief/Thanks"
 import ExitSurvey from "./exit/debrief/ExitSurvey"
 import Sorry from "./exit/debrief/Sorry"
 import PostSurvey from "./exit/debrief/post-survey/PostSurvey"
-
+import Consent from "./consent/Consent"
 /*-----------------------------
 - Setting up the Empirica app -
 ------------------------------*/
