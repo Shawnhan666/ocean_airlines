@@ -104,7 +104,7 @@ export default class Collaborate extends Component {
             </p>
             <div className="collab-n-chat">
               <CollabEditor
-                editorKey={`${game._id}_${stage.name}_1`}
+                editorKey={`collabText_interaction_${stage.name === "interaction_1" ? "1" : "2"}_1`}
                 number={1}
                 {...this.props}
               />
@@ -130,7 +130,7 @@ export default class Collaborate extends Component {
             </p>
             <div className="collab-n-chat">
               <CollabEditor
-                editorKey={`${stage.name}_2`}
+                editorKey={`collabText_interaction_${stage.name === "interaction_1" ? "1" : "2"}_2`}
                 number={2}
                 {...this.props}
               />

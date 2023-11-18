@@ -22,7 +22,6 @@ class timer extends Component {
     const { game, player, editorKey, number, round, stage, remainingSeconds } =
       this.props
 
-    console.log(`editor key = ${editorKey}`)
 
     var config = {
       apiKey: "AIzaSyBfWYClPO5xdzmjR-349n79XXNCgQz5yWs",
@@ -51,24 +50,16 @@ class timer extends Component {
     })
     //// Initialize contents.
     firepad.on("ready", function () {
-      if (firepad.isHistoryEmpty()) {
-        if (stage.name === "interaction_1") {
-          firepad.setHtml(
-            '<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>'
-          )
-        } else {
-          firepad.setHtml(
-            `<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>`
-          )
-        }
-      }
+              firepad.setHtml(
+                '<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>'
+        )
+       
     })
 
     let collabText = ""
 
     firepad.on("synced", () => {
       collabText = firepad.getText()
-      console.log(collabText)
       this.setState({ text: collabText })
     })
 
@@ -99,9 +90,6 @@ class timer extends Component {
       ref = ref.push() // generate unique location.
       window.location = window.location + "#" + ref.key // add it as a hash to the URL.
     }
-    if (typeof console !== "undefined") {
-      console.log("Firebase data: ", ref.toString())
-    }
     return ref
   }
 
@@ -110,9 +98,6 @@ class timer extends Component {
 
     var ref = window.firebase.database().ref()
     ref = ref.child(editorKey)
-    if (typeof console !== "undefined") {
-      console.log("Firebase data: ", ref.toString())
-    }
     return ref
   }
 
@@ -121,14 +106,12 @@ class timer extends Component {
     let text = this.state["text"]
     let firepadContainer = document.querySelector(`#firepad-container${number}`)
     let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText
-    console.log(eleText)
-    console.log(`text: ${text}`)
     if (text === "") {
-      round.set(`collabText${editorKey}`, eleText)
+      round.set(`${editorKey}`, eleText)
       return
     }
 
-    round.set(`collabText${editorKey}`, text)
+    round.set(`${editorKey}`, text)
   }
 
   // getIsInvolved = () => {
