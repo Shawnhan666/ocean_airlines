@@ -51,42 +51,19 @@ class timer extends Component {
     })
     //// Initialize contents.
     firepad.on("ready", function () {
-      if (firepad.isHistoryEmpty()) {
-        if (stage.name === "interaction_1") {
-          firepad.setHtml(
-            '<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>'
-          )
-        } else {
-          firepad.setHtml(
-            `<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>`
-          )
-        }
-      }
+              firepad.setHtml(
+                '<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>'
+        )
     })
 
     let collabText = ""
 
     firepad.on("synced", () => {
-      collabText = firepad.getText()
-      console.log(collabText)
-      this.setState({ text: collabText })
+      let currentText = firepad.getText()
+      this.setState({ text: currentText })
     })
+    
 
-    // firepad.on('synced', function(isSynced) =>  {
-    //   // console.log(firepad.getText())
-    //   collabText = firepad.getText()
-    //   console.log(collabText)
-    //   // this.setState({text: collabText})
-    //   //this.changeText(collabText)
-    //   // round.set(`collabText${key}`, firepad.getText())
-    //   // player.set("collabText", firepad.getText())
-    //   // console.log(round)
-
-    // });
-
-    // if (remainingSeconds <550) {
-    //   this.setState({text: collabText})
-    // }
   }
 
   // Helper to get hash from end of URL or generate a random one.
@@ -99,9 +76,6 @@ class timer extends Component {
       ref = ref.push() // generate unique location.
       window.location = window.location + "#" + ref.key // add it as a hash to the URL.
     }
-    if (typeof console !== "undefined") {
-      console.log("Firebase data: ", ref.toString())
-    }
     return ref
   }
 
@@ -110,35 +84,18 @@ class timer extends Component {
 
     var ref = window.firebase.database().ref()
     ref = ref.child(editorKey)
-    if (typeof console !== "undefined") {
-      console.log("Firebase data: ", ref.toString())
-    }
     return ref
   }
-
+  
   saveText = () => {
-    const { round, editorKey, number } = this.props
-    let text = this.state["text"]
-    let firepadContainer = document.querySelector(`#firepad-container${number}`)
-    let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText
-    console.log(eleText)
-    console.log(`text: ${text}`)
-    if (text === "") {
-      round.set(`collabText${editorKey}`, eleText)
-      return
-    }
+    const { round, editorKey, number } = this.props;
+    let firepadContainer = document.getElementById(`firepad-container${number}`);
+    let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText;
 
-    round.set(`collabText${editorKey}`, text)
+    // 直接使用 Firepad 当前内容
+    round.set(`${editorKey}`, eleText);
   }
-
-  // getIsInvolved = () => {
-  //   const { player, team } = this.props
-
-  //   // get player team
-  //   const myTeam = player.get("team")
-
-  //   return myTeam === team
-  // }
+  
 
   render() {
     const { remainingSeconds, round, number, editorKey } = this.props
