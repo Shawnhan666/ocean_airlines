@@ -22,6 +22,7 @@ class timer extends Component {
     const { game, player, editorKey, number, round, stage, remainingSeconds } =
       this.props
 
+    console.log(`editor key = ${editorKey}`)
 
     var config = {
       apiKey: "AIzaSyBfWYClPO5xdzmjR-349n79XXNCgQz5yWs",
@@ -53,31 +54,16 @@ class timer extends Component {
               firepad.setHtml(
                 '<span style="font-size: 24px;" style="color: gray">This is the collaborative editor, please write your slogan here... </span>'
         )
-       
     })
 
     let collabText = ""
 
     firepad.on("synced", () => {
-      collabText = firepad.getText()
-      this.setState({ text: collabText })
+      let currentText = firepad.getText()
+      this.setState({ text: currentText })
     })
+    
 
-    // firepad.on('synced', function(isSynced) =>  {
-    //   // console.log(firepad.getText())
-    //   collabText = firepad.getText()
-    //   console.log(collabText)
-    //   // this.setState({text: collabText})
-    //   //this.changeText(collabText)
-    //   // round.set(`collabText${key}`, firepad.getText())
-    //   // player.set("collabText", firepad.getText())
-    //   // console.log(round)
-
-    // });
-
-    // if (remainingSeconds <550) {
-    //   this.setState({text: collabText})
-    // }
   }
 
   // Helper to get hash from end of URL or generate a random one.
@@ -100,28 +86,16 @@ class timer extends Component {
     ref = ref.child(editorKey)
     return ref
   }
-
+  
   saveText = () => {
-    const { round, editorKey, number } = this.props
-    let text = this.state["text"]
-    let firepadContainer = document.querySelector(`#firepad-container${number}`)
-    let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText
-    if (text === "") {
-      round.set(`${editorKey}`, eleText)
-      return
-    }
+    const { round, editorKey, number } = this.props;
+    let firepadContainer = document.getElementById(`firepad-container${number}`);
+    let eleText = firepadContainer.querySelector(".CodeMirror-code").innerText;
 
-    round.set(`${editorKey}`, text)
+    // 直接使用 Firepad 当前内容
+    round.set(`${editorKey}`, eleText);
   }
-
-  // getIsInvolved = () => {
-  //   const { player, team } = this.props
-
-  //   // get player team
-  //   const myTeam = player.get("team")
-
-  //   return myTeam === team
-  // }
+  
 
   render() {
     const { remainingSeconds, round, number, editorKey } = this.props

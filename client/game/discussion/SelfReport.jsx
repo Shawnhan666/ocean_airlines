@@ -41,10 +41,10 @@ export default class SelfReport extends Component {
         <InformationLine {...this.props} />
         <br />
         <h1>Here are the slogans your group came up with:</h1>
-        <ul>
+        <ol>
           <li>{idea1}</li>
           <li>{idea2}</li>
-        </ul>
+        </ol>
 
         <p>
           As a team please use the dropdown menu to rank these ideas from the

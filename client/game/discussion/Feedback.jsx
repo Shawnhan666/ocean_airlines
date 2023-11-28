@@ -37,22 +37,43 @@ class feedback extends Component {
         <InformationLine {...this.props} />
         <br />
 
-        <p>Below are the 2 slogans the team produced:</p>
-        <ul>
+        <p>Below are the 2 slogans the team produced so far:</p>
+        <ol>
           <li>{idea1}</li>
           <li>{idea2}</li>
-        </ul>
+        </ol>
 
         <p>
           We will be using our trained algorithm to evaluate the creativity of
           slogans submitted by all participants. This will determine the 5 most
           creative slogans that will recieve the bonus $10
         </p>
-
         {condition !== "control" && (
+  <div className="game-instructions">
+    <p>
+      Our algorithm has identified Slogan No.{" "}
+      {condition === "align"
+        ? game.get("most_creative").slice(-1)
+        : game.get("least_creative").slice(-1)}
+      :
+    </p>
+    <p style={{ textAlign: "center" }}>
+      <em>
+        {condition === "align"
+          ? (game.get("most_creative") === "idea1" ? idea1 : idea2)
+          : (game.get("least_creative") === "idea1" ? idea1 : idea2)}
+      </em>
+    </p>
+    <p>as the most creative from your submission.</p>
+  </div>
+)}
+
+
+
+        {/* {condition !== "control" && (
           <div className="game-instructions">
             <p>
-              Our algoirthm has identified Slogan No.{" "}
+              Our algorithm has identified Slogan No.{" "}
               {condition === "align"
                 ? game.get("most_creative").slice(-1)
                 : game.get("least_creative").slice(-1)}{" "}
@@ -75,7 +96,7 @@ class feedback extends Component {
               </em>{" "}
             </p>
           </div>
-        )}
+        )} */}
         <br />
         <p>
           On the next page your group will have 5 more minutes to revise and

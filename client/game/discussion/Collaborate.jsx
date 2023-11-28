@@ -58,7 +58,7 @@ export default class Collaborate extends Component {
         <br />
         <div className="game-tip">
           <p>
-            Please use the collaborative text areas to slogans that are creative
+            Please use the collaborative text areas to create slogans that are creative
             - those that strike people as unusual and novel, but are also useful
             in attracting customers and persuading them to take Ocean Air.
           </p>
