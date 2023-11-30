@@ -41,8 +41,8 @@ factors:
     value: control
     factorTypeId: fRcTQzutAevKiyGL8
 lobbyConfigs:
-  - name: fail5min
+  - name: fail3min
     timeoutType: lobby
-    timeoutInSeconds: 300
+    timeoutInSeconds: 180
     timeoutStrategy: fail
     gameLobbyIds: []

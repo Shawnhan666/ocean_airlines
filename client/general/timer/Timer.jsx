@@ -16,7 +16,7 @@ class timer extends React.Component {
       classes.push("lessThan10");
     }
 
-    if (remainingSeconds === 120) {
+    if (remainingSeconds === 60) {
       player.round.set("alert", true)
     } 
     

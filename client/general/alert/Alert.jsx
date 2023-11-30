@@ -15,7 +15,7 @@ export default class Alert extends Component {
         return (
             <div style={shadedPage}>
                 <div style={alert}>
-                    {alertType === "2 mins" ? <p><strong>There are only two minutes left!</strong></p> : <p><strong>There are only 30 seconds left!</strong></p>}
+                    {alertType === "1 mins" ? <p><strong>Just 1 minute left, please remember to click the save button before submitting!</strong></p> : <p><strong>There are only 30 seconds left!</strong></p>}
                     {stage.name === "collaborate" &&  <p><strong><u>Make sure to save your work!</u></strong></p>}
                     <p className="button-holder"><button onClick={this.closeAlert}>Ok</button></p>
                 </div>
@@ -43,6 +43,9 @@ const alert = {
     , height: "250px"
     , border: "1px solid black"
     , borderRadius: "1rem"
+    , fontSize: "14px"  
+    , lineHeight: "1.6"  
+    , color: "#333"  
 
     , display: "flex"
     , flexDirection: "column"

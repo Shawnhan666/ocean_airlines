@@ -46,7 +46,7 @@ Empirica.gameInit((game) => {
     player.set("exitPage", 1)
 
     // Set alert type
-    player.set("alertType", "2 mins")
+    player.set("alertType", "1 mins")
   })
 
   /*----------------------------------
