@@ -35,8 +35,10 @@ class timer extends Component {
       window.firebase.app() // if already initialized, use that one
     }
 
-    let chatReference = `${editorKey}`
+    // let chatReference = `${editorKey}`
+    let chatReference = `empirica/${game._id}/${editorKey}`
 
+    
     //// Get Firebase Database reference.
     var firepadRef = window.firebase.database().ref(chatReference) //this.getExampleRef(); //wthis.getkeyRef();
     //// Create CodeMirror (with lineWrapping on).

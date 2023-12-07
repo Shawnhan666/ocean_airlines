@@ -10,19 +10,63 @@ export default class Alert extends Component {
     }
 
     render() {
-        const { stage, player } = this.props
-        let alertType = player.get("alertType")
+        const { stage, player } = this.props;
+        let alertType = player.get("alertType");
+
         return (
             <div style={shadedPage}>
                 <div style={alert}>
-                    {alertType === "1 mins" ? <p><strong>Just 1 minute left, please remember to click the save button before submitting!</strong></p> : <p><strong>There are only 30 seconds left!</strong></p>}
-                    {stage.name === "collaborate" &&  <p><strong><u>Make sure to save your work!</u></strong></p>}
-                    <p className="button-holder"><button onClick={this.closeAlert}>Ok</button></p>
+                    {alertType === "1 mins" ? 
+                        <p style={{ textAlign: 'center' }}><strong>Just 1 minute left! Please create and SAVE two slogans before submitting.</strong></p> 
+                        : 
+                        <p style={{ textAlign: 'center' }}><strong>There are only 30 seconds left!</strong></p>}
+                    {stage.name === "collaborate" && 
+                        <p style={{ textAlign: 'center' }}><strong><u>Make sure to save your work!</u></strong></p>}
+                    <div style={{ marginTop: '90px' }}> {/* 这里添加了额外的上边距 */}
+                        <button onClick={this.closeAlert}>Ok</button>
+                    </div>
                 </div>
-            </div >
+            </div>
         )
     }
 }
+
+//     render() {
+//         const { stage, player } = this.props;
+//         let alertType = player.get("alertType");
+
+//         return (
+//             <div style={shadedPage}>
+//                 <div style={alert}>
+//                     {alertType === "1 mins" ? 
+//                         <p style={{ textAlign: 'center' }}><strong>Just 1 minute left! Please create and save two slogans before submitting.</strong></p> 
+//                         : 
+//                         <p style={{ textAlign: 'center' }}><strong>There are only 30 seconds left!</strong></p>}
+//                     {stage.name === "collaborate" && 
+//                         <p style={{ textAlign: 'center' }}><strong><u>Make sure to save your work!</u></strong></p>}
+//                     <p className="button-holder" style={{ textAlign: 'center' }}>
+//                         <button onClick={this.closeAlert}>Ok</button>
+//                     </p>
+//                 </div>
+//             </div>
+//         )
+//     }
+// }
+
+//     render() {
+//         const { stage, player } = this.props
+//         let alertType = player.get("alertType")
+//         return (
+//             <div style={shadedPage}>
+//                 <div style={alert}>
+//                     {alertType === "1 mins" ? <p><strong>Just 1 minute left! Please create and save two slogans before submitting.</strong></p> : <p><strong>There are only 30 seconds left!</strong></p>}
+//                     {stage.name === "collaborate" &&  <p><strong><u>Make sure to save your work!</u></strong></p>}
+//                     <p className="button-holder"><button onClick={this.closeAlert}>Ok</button></p>
+//                 </div>
+//             </div >
+//         )
+//     }
+// }
 
 // Style variables
 const shadedPage = {
@@ -39,8 +83,8 @@ const shadedPage = {
 
 const alert = {
     backgroundColor: "rgb(250, 250, 250)"
-    , width: "400px"
-    , height: "250px"
+    , width: "500px"
+    , height: "350px"
     , border: "1px solid black"
     , borderRadius: "1rem"
     , fontSize: "14px"  
