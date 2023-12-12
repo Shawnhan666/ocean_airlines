@@ -66,7 +66,7 @@ export default class LobbyJoin extends Component {
                   Please press the submit button to continue.{" "}
                   <strong>
                     You will enter a lobby and wait a maximum of 3 minutes while 
-                    we connect you with other players. If there are not enough players to start the game, we will compensate you with $0.40 for your time. 
+                    we connect you with other players. If there are not enough players to start the game, we will compensate you with £0.40 for your time. 
                   </strong>
                 </p>
               </div>

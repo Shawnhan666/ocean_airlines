@@ -13,13 +13,13 @@ export default class Sorry extends React.Component {
     let msg;
     switch (player.exitStatus) {
       case "gameFull":
-        msg = "All games you are eligible for have been filled. We will pay you $0.10 for you time.";
+        msg = "All games you are eligible for have been filled. We will pay you £0.10 for you time.";
         break;
       case "gameLobbyTimedOut":
-        msg = "There were NOT enough players for the game to start. We will pay you $0.40 for your time.";
+        msg = "There were NOT enough players for the game to start. We will pay you £0.40 for your time.";
         break;
       case "playerLobbyTimedOut":
-        msg = "There were NOT enough players for the game to start. We will pay you $0.40 for your time.";
+        msg = "There were NOT enough players for the game to start. We will pay you £0.40 for your time.";
         break;
       case "playerEndedLobbyWait":
         msg =

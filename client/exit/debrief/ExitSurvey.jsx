@@ -30,7 +30,7 @@ export default class ExitSurvey extends Component {
         </p>
         <p>
           Please allow us 5 business days to process your basic compensation
-          ($4).
+          (£2.70).
         </p>
         <p>
           Please allow us 4 business weeks to calculate all teams scores and
