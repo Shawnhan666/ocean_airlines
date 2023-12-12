@@ -62,7 +62,7 @@ export default class Welcome extends Component {
 
                     <div className="game-competition">
                         <p>
-                            <strong>If you cannot commit to being fully engaged for the next 60 minutes, please exit now and enter the code EXIT in Prolific and we will process a payment of $0.10 for your time.</strong>
+                            <strong>If you cannot commit to being fully engaged for the next 60 minutes, please exit now and enter the code EXIT in Prolific and we will process a payment of £0.10 for your time.</strong>
                         </p>
                         <p>
                             <strong><u>This will have no negative effect on your Prolific rating</u></strong>
